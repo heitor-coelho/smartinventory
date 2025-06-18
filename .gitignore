@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+*.env
+*.sqlite3
+
+# Django
+/media
+/staticfiles
+
+# VS Code
+.vscode/
+
+# Docker
+*.log
+
+# Poetry
+poetry.lock
+__pypackages__/
+
+# Env files
+.env
+.env.*
+
+# Migrations (opcional — ou você versiona depois)
+**/migrations/*.py
+!**/migrations/__init__.py

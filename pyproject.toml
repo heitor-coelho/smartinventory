@@ -1,0 +1,27 @@
+[project]
+name = "smartinventory"
+version = "0.1.0"
+description = "smartinventory"
+authors = [
+    {name = "Heitor Coelho",email = "heitor.santosprog@gmmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.12,<4"
+packages = [
+    { include = "smartinventory" }
+]
+dependencies = [
+    "django (>=5.2.3,<6.0.0)",
+    "djangorestframework (>=3.16.0,<4.0.0)",
+    "rest-framework-simplejwt (>=0.0.2,<0.0.3)",
+    "djangorestframework-simplejwt (>=5.5.0,<6.0.0)",
+    "django-cors-headers (>=4.7.0,<5.0.0)",
+    "django-debug-toolbar (>=5.2.0,<6.0.0)",
+    "psycopg2-binary (>=2.9.10,<3.0.0)",
+    "django-environ (>=0.12.0,<0.13.0)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"

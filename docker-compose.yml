@@ -1,0 +1,32 @@
+
+services:
+  db:
+    image: postgres:15
+    restart: always
+    environment:
+      POSTGRES_DB: smartinventory
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+  backend:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    volumes:
+      - ./backend:/app
+      - ./.env:/app/.env 
+    ports:
+      - "8000:8000"
+    env_file:
+      - ./.env
+    environment:
+      - DJANGO_SETTINGS_MODULE=smartinventory.settings.dev
+    depends_on:
+      - db
+
+volumes:
+  postgres_data:
